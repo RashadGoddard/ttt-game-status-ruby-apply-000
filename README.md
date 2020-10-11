@@ -61,11 +61,16 @@ Create a nested array of win combinations defined in a constant
 `WIN_COMBINATIONS` within `lib/game_status.rb`. It's structure should resemble:
 
 ```ruby
-WIN_COMBINATIONS = [
-  [0,1,2], # Top row
-  [3,4,5]  # Middle row
-  # ETC, an array for each win combination
-]
+# Board with winning X in the top row.
+board = ["X", "X", "X", " ", " ", " ", " ", " ", " "]
+ 
+# Definition of indexes that compose a top row win.
+top_row_win = [0,1,2]
+ 
+# Check if each index in the top_row_win array contains an "X"
+if board[top_row_win[0]] == "X" && board[top_row_win[1]] == "X" && board[top_row_win[2]] == "X"
+  "X won in the top row"
+end
 ```
 
 Run the tests with `learn` until your `WIN_COMBINATIONS` contains all the possible solutions.
